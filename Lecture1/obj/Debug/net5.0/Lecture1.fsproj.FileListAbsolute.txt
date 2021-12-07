@@ -1,0 +1,3 @@
+/Users/kamil/Desktop/Quantum Scholarship/Lecture1/obj/Debug/net5.0/Lecture1.AssemblyInfoInputs.cache
+/Users/kamil/Desktop/Quantum Scholarship/Lecture1/obj/Debug/net5.0/Lecture1.AssemblyInfo.fs
+/Users/kamil/Desktop/Quantum Scholarship/Lecture1/obj/Debug/net5.0/Lecture1.fsproj.CoreCompileInputs.cache
