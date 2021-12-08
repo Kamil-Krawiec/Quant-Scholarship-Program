@@ -56,7 +56,7 @@ pascal(5L)= [1L; 5L; 10L; 10L; 5L; 1L];;
 pascal(6L)=[1L; 6L; 15L; 20L; 15L; 6L; 1L];;
 
 //Ex4
-// Faculty should be a Discriminated Union of PPT, IZ, IT, EFM, MAT
+
 type Faculty = 
     |PPT 
     |IZ
@@ -108,3 +108,34 @@ let averageGPA listOfStudents faculty =
     helper listOfStudents [];;
 
 averageGPA students IZ=69.1;;
+
+//Ex5
+//can be better with normal rec
+let rec getListWithoutWordTailRec word list: string list=
+    let rec helper words listWithout = 
+        match words with 
+        h::t when h=word-> helper t listWithout
+        |h::t-> helper t (h::listWithout)
+        |[]->List.rev listWithout
+    in 
+    helper list [];;
+
+
+let rec getListWithoutWordRec word list: string list=
+    match list with 
+    h::t when h=word-> getListWithoutWordRec word t
+    |h::t -> h::getListWithoutWordRec word t 
+    |[]->[]
+
+
+
+getListWithoutWordRec "ala" ["ala";"ma";"kota"]=["ma"; "kota"];;
+getListWithoutWordRec "ala" ["ala";"ma";"kota";"ktorego";"nazwala"; "ala"]=["ma"; "kota"; "ktorego"; "nazwala"];;
+// getListWithoutWordRec 10 [10;12;13;10] error bc type must be string 
+
+let idxList firstIndex listOfElements=
+    List.mapi (fun i elem->(firstIndex+i,elem)) listOfElements
+
+
+idxList 10 ["ala";"ma";"kota";"ktorego";"nazwala"; "ala"]=[(10, "ala"); (11, "ma"); (12, "kota"); (13, "ktorego"); (14, "nazwala");
+   (15, "ala")];;
