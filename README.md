@@ -15,3 +15,8 @@ b) Define a list containing 10 examples
 c) Define a function that prints only records for IT (HINT: use pattern matching)
 d) Define a function that calculates average GPA only for a specified faculty (passed as an
 argument)
+5. Define functions:
+a)Function that gives list of words without given word
+getListWithoutWord: w:string ->  ls:string list -> string list
+b)Function that gives list tuples counted from i
+idxList: i:int -> ls:'a list -> (int * 'a) list
