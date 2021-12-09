@@ -1,5 +1,6 @@
 # Quant-Scholarship-Program
 Quant Strats Scholarship Program exercises from the lecture
+
 First Lectures exercises
 1. Using visual studio create a F# Library and inside a module 'Lecture1.
 2. Define functions fst, mid, lst for 3-tuple that return first, middle and last element
