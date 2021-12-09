@@ -11,7 +11,7 @@ let lst tuple=
     match tuple with
         (_,_,last)-> last;;
 
-
+// TEST
 fst (1,2,3)=1;;
 mid (1,2,3)=2;;
 lst (1,2,(1,3))=(1,3);;
@@ -21,12 +21,15 @@ lst (1,2,(1,3))=(1,3);;
 let rec factorial n=
     if n<=0 then 1
     else n*factorial(n-1);;
-
+// TEST
 factorial 5 = 120;;
+
 // b
 let rec binomialCoefficient n k= 
     if (n>=0 && k>=0) then factorial(n)/(factorial(k)*factorial(n-k))
     else 0;;
+
+// TEST
 binomialCoefficient 4 1 = 4;;
 binomialCoefficient 10 2 = 45;;
 
@@ -46,7 +49,8 @@ let rec pascal(n: int64): int64 list=
             else pascalList
         in
         helper([1L;2L;1L],n-1L)
-    
+
+// TEST    
 pascal(0L)=             [1L];;
 pascal(1L)=            [1L;1L];;
 pascal(2L)=          [1L;2L;1L];;
@@ -57,6 +61,7 @@ pascal(6L)=[1L; 6L; 15L; 20L; 15L; 6L; 1L];;
 
 //Ex4
 
+// a
 type Faculty = 
     |PPT 
     |IZ
@@ -67,7 +72,7 @@ type Faculty =
 type Student = { StudentName: string; GPA: float; Faculty: Faculty};;
 
 
-
+// b
 let students = [
     {StudentName= "Kamil"   ;GPA= 98.0;     Faculty= IZ};
     {StudentName= "Patryk"  ;GPA= 43.4;     Faculty= EFM};
@@ -83,7 +88,7 @@ let students = [
 
 
 
-
+// c
 let rec printITGuy listOfStudents = 
     let rec helper students itStudents=
         match students with
@@ -95,9 +100,10 @@ let rec printITGuy listOfStudents =
 
 ;;
 
+// TEST
 printITGuy students =[{ StudentName = "Basia" ;GPA = 98.0 ;Faculty = IT }; { StudentName = "Adam" ; GPA = 32.4 ;Faculty = IT }];;
 
-
+// d
 let averageGPA listOfStudents faculty =
     let rec helper students gpaPoints=
         match students with
@@ -107,9 +113,11 @@ let averageGPA listOfStudents faculty =
     in 
     helper listOfStudents [];;
 
+// TEST
 averageGPA students IZ=69.1;;
 
 //Ex5
+
 //can be better with normal rec
 let rec getListWithoutWordTailRec word list: string list=
     let rec helper words listWithout = 
@@ -128,14 +136,14 @@ let rec getListWithoutWordRec word list: string list=
     |[]->[]
 
 
-
+// TEST
 getListWithoutWordRec "ala" ["ala";"ma";"kota"]=["ma"; "kota"];;
 getListWithoutWordRec "ala" ["ala";"ma";"kota";"ktorego";"nazwala"; "ala"]=["ma"; "kota"; "ktorego"; "nazwala"];;
 // getListWithoutWordRec 10 [10;12;13;10] error bc type must be string 
 
-let idxList firstIndex listOfElements=
-    List.mapi (fun i elem->(firstIndex+i,elem)) listOfElements
+let idxList fromIndex listOfElements=
+    List.mapi (fun i elem->(fromIndex+i,elem)) listOfElements
 
-
+// TEST
 idxList 10 ["ala";"ma";"kota";"ktorego";"nazwala"; "ala"]=[(10, "ala"); (11, "ma"); (12, "kota"); (13, "ktorego"); (14, "nazwala");
    (15, "ala")];;
