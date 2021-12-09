@@ -22,3 +22,5 @@ a)Function that gives list of words without given word
 getListWithoutWord: w:string ->  ls:string list -> string list
 b)Function that gives list tuples counted from i
 idxList: i:int -> ls:'a list -> (int * 'a) list
+ 
+ 
