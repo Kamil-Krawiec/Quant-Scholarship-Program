@@ -9,12 +9,14 @@ a) factorial n
 b) binomialCoefficient n k
 c) function “pascal n : int64 -> int64 list” returning list of numbers on nth level of Pascal’s
 triangle
+
 4. Define a record containing: StudentName, GPA (Grade Point Average), Faculty.
 a) Faculty should be a Discriminated Union of PPT, IZ, IT, EFM, MAT
 b) Define a list containing 10 examples
 c) Define a function that prints only records for IT (HINT: use pattern matching)
 d) Define a function that calculates average GPA only for a specified faculty (passed as an
 argument)
+
 5. Define functions:
 a)Function that gives list of words without given word
 getListWithoutWord: w:string ->  ls:string list -> string list
